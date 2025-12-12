@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-theme="dark" data-lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YWEB — Yahya Al-Banna</title>
+  <meta name="description" content="YWEB cinematic one-page portfolio for Yahya Khaled Noaman Al-Banna — Web Developer & UI/UX Designer." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Intro / Loader -->
+  <div id="intro" class="intro" aria-hidden="true">
+    <div class="intro-card">
+      <div class="intro-logo" aria-label="YWEB">
+        <img class="show-dark" src="assets/logo_light_icon.png" alt="YWEB logo" />
+        <img class="show-light" src="assets/logo_dark_icon.png" alt="YWEB logo" />
+      </div>
+      <div class="intro-bar"><span></span></div>
+      <div class="intro-sub" data-i18n="intro_sub">Loading experience…</div>
+    </div>
+  </div>
+
+  <!-- Animated background -->
+  <div class="bg" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+    <div class="fog fog-1"></div>
+    <div class="fog fog-2"></div>
+    <div class="fog fog-3"></div>
+    <div class="stars"></div>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+  </div>
+
+  <!-- cursor -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="cursor-trail" aria-hidden="true"></div>
+  <div class="cursor-blob" aria-hidden="true"></div>
+<!-- Topbar -->
+  <header class="topbar" id="top">
+    <a class="brand" href="#top" aria-label="YWEB">
+      <img class="brand-mark show-dark" src="assets/logo_light_icon.png" alt="YWEB"/>
+      <img class="brand-mark show-light" src="assets/logo_dark_icon.png" alt="YWEB"/>
+      <span class="brand-text">YWEB</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+    </nav>
+
+    <div class="actions">
+      <button id="themeBtn" class="icon-btn" aria-label="Toggle theme" title="Theme">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+          <path d="M21 12.6A8.5 8.5 0 1 1 11.4 3a7 7 0 0 0 9.6 9.6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button id="langBtn" class="chip-btn" aria-label="Toggle language" title="Language">AR</button>
+    </div>
+  </header>
+
+  <!-- Side social -->
+  <aside class="side-social" aria-label="Social links">
+    <a class="side-ico" href="mailto:yahyaalbnaa6@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+        <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+      </svg><span class="side-text">Email</span>
+    </a>
+    <a class="side-ico" href="https://wa.me/967774586524" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+        <path d="M20.5 11.8a8.6 8.6 0 0 1-12.6 7.6L4 20l.7-3.7A8.6 8.6 0 1 1 20.5 11.8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M9.6 8.8c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.4.5c-.2.2-.1.4 0 .6.3.6 1.1 1.5 2.4 2.1.2.1.4.1.5-.1l.6-.7c.2-.2.4-.3.7-.2l1.7.6c.3.1.4.3.4.5v.4c0 .3-.2.7-.6.9-.5.2-1.6.6-3.4-.1-2.1-.8-3.8-2.8-4.4-3.9-.6-1.1-.9-2.3-.4-3.3Z" fill="currentColor" opacity=".9"/>
+      </svg><span class="side-text">WhatsApp</span>
+    </a>
+    <a class="side-ico" href="https://github.com/Yahyaalbanaa" target="_blank" rel="noreferrer" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.72.5.1.68-.22.68-.48v-1.7c-2.78.62-3.37-1.08-3.37-1.08-.45-1.2-1.1-1.52-1.1-1.52-.9-.64.07-.63.07-.63 1 .08 1.53 1.05 1.53 1.05.9 1.58 2.36 1.12 2.93.85.1-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.38-2.03 1.02-2.75-.1-.26-.45-1.33.1-2.77 0 0 .84-.28 2.75 1.05.8-.23 1.66-.35 2.52-.35.86 0 1.72.12 2.52.35 1.9-1.33 2.75-1.05 2.75-1.05.55 1.44.2 2.51.1 2.77.64.72 1.02 1.63 1.02 2.75 0 3.95-2.34 4.81-4.57 5.07.36.32.69.95.69 1.92v2.84c0 .26.18.59.69.48A10.2 10.2 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor" opacity=".92"/>
+      </svg><span class="side-text">GitHub</span>
+    </a>
+    <a class="side-ico" href="https://www.instagram.com/yahya.albnaa/" target="_blank" rel="noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/>
+        <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      </svg><span class="side-text">Instagram</span>
+    </a>
+    <div class="side-label" data-i18n="follow_me">Follow</div>
+  </aside>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero section">
+      <div class="hero-left reveal">
+<h1 class="title">
+          <span class="t1" data-i18n="hero_name_1">Yahya Khaled</span>
+          <span class="t2" data-i18n="hero_name_2">Noaman Al‑Banna</span>
+        </h1>
+        <div class="subtitle" data-i18n="hero_role">Web Developer & UI/UX Designer</div>
+        <p class="desc" data-i18n="hero_desc">
+          I craft modern websites with premium UI/UX, smooth interactions, and clean front‑end engineering.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="#contact" data-i18n="cta_primary">Let’s work</a>
+          <a class="btn ghost" href="#projects" data-i18n="cta_secondary">View projects</a>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <div class="k" data-i18n="fact_age_k">Age</div>
+            <div class="v" data-i18n="fact_age_v">21</div>
+          </div>
+          <div class="fact">
+            <div class="k" data-i18n="fact_loc_k">Location</div>
+            <div class="v" data-i18n="fact_loc_v">Sana’a, Yemen</div>
+          </div>
+          <div class="fact">
+            <div class="k" data-i18n="fact_ed_k">Education</div>
+            <div class="v" data-i18n="fact_ed_v">BSc Computer Science</div>
+          </div>
+        </div>
+
+        <div class="logo-row" aria-hidden="true">
+          <img class="show-dark" src="assets/logo_dark_full.png" alt="YWEB" />
+          <img class="show-light" src="assets/logo_light_full.png" alt="YWEB" />
+        </div>
+      </div>
+
+      <div class="hero-right reveal">
+        <div class="portrait-card tilt">
+          <div class="portrait-wrap">
+            <img class="portrait" src="assets/portrait.jpg" alt="Portrait" />
+            <div class="portrait-shade"></div>
+          </div>
+          <div class="portrait-meta">
+            <div class="meta-title" data-i18n="meta_title">Signature</div>
+            <ul class="meta-list">
+              <li data-i18n="meta_1">Premium dark design with white accent.</li>
+              <li data-i18n="meta_2">Smooth motion & micro‑interactions.</li>
+              <li data-i18n="meta_3">Fast, responsive, and clean layout.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section block">
+      <div class="section-head reveal">
+        <h2 data-i18n="about_title">About</h2>
+        <p data-i18n="about_sub">A short story about who I am and what I deliver.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <h3 data-i18n="about_h1">Biography</h3>
+          <p data-i18n="about_p1">
+            I’m Yahya Khaled Noaman Al‑Banna, 21 years old from Sana’a, Yemen. I hold a BSc in Computer Science from Al‑Etehad University.
+            I’m passionate about modern web development and building clean, premium interfaces.
+          </p>
+        </article>
+        <article class="card reveal">
+          <h3 data-i18n="about_h2">My focus</h3>
+          <p data-i18n="about_p2">Elegance, performance, and UX—so the product feels premium and loads fast.</p>
+        </article>
+        <article class="card reveal">
+          <h3 data-i18n="skills_title">Skills</h3>
+          <div class="chips">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">React</span>
+            <span class="chip">UI/UX</span>
+            <span class="chip">Figma</span>
+            <span class="chip" data-i18n="chip_responsive">Responsive</span>
+          </div>
+        </article>
+        <article class="card reveal">
+          <h3 data-i18n="about_h3">Design DNA</h3>
+          <p data-i18n="about_p3">Minimal, cinematic, and intentional motion—no noise, just quality.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section block">
+      <div class="section-head reveal">
+        <h2 data-i18n="services_title">Services</h2>
+        <p data-i18n="services_sub">Clear deliverables, premium results.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv1_t">Web Development</h3>
+          <p data-i18n="sv1_p">Modern websites with best practices: fast, secure, and easy to use.</p>
+        </article>
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv2_t">UI/UX Design</h3>
+          <p data-i18n="sv2_p">Premium interfaces focused on usability, clarity, and aesthetics.</p>
+        </article>
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv3_t">Responsive Design</h3>
+          <p data-i18n="sv3_p">A flawless experience across mobile, tablet, and large screens.</p>
+        </article>
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv4_t">Front‑End Engineering</h3>
+          <p data-i18n="sv4_p">Clean, scalable front‑end using JavaScript & React.</p>
+        </article>
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv5_t">Maintenance & Upgrades</h3>
+          <p data-i18n="sv5_p">Fixes, improvements, and new features for existing websites.</p>
+        </article>
+        <article class="card reveal tilt">
+          <h3 data-i18n="sv6_t">Brand‑Ready Landing Pages</h3>
+          <p data-i18n="sv6_p">High‑converting landing pages with smooth motion and clear sections.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section block">
+      <div class="section-head reveal">
+        <h2 data-i18n="projects_title">Projects</h2>
+        <p data-i18n="projects_sub">Selected work (clean, modern, and responsive).</p>
+      </div>
+
+      <div class="projects">
+        <article class="project card reveal tilt">
+          <div class="proj-top">
+            <div class="proj-title" data-i18n="p1_t">Photographer Management System</div>
+            <div class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">React</span>
+            </div>
+          </div>
+          <p data-i18n="p1_p">A modern platform for photographers and bookings with a sleek UI.</p>
+          <a class="proj-link" href="https://yahyaalbanaa.github.io/Photographer-s-fingerprint/" target="_blank" rel="noreferrer" data-i18n="view_live">View Live</a>
+        </article>
+
+        <article class="project card reveal tilt">
+          <div class="proj-top">
+            <div class="proj-title" data-i18n="p2_t">Professional Portfolio Website</div>
+            <div class="tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">UI/UX</span>
+            </div>
+          </div>
+          <p data-i18n="p2_p">A premium portfolio layout designed for clean presentation and performance.</p>
+          <a class="proj-link" href="https://github.com/Yahyaalbanaa" target="_blank" rel="noreferrer" data-i18n="view_repo">View Repo</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section block">
+      <div class="section-head reveal">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p data-i18n="contact_sub">Let’s build something premium.</p>
+      </div>
+
+      <div class="contact">
+        <a class="card reveal contact-card" href="mailto:yahyaalbnaa6@gmail.com">
+          <div class="k" data-i18n="c_email">Email</div>
+          <div class="v">yahyaalbnaa6@gmail.com</div>
+        </a>
+        <a class="card reveal contact-card" href="https://wa.me/967774586524" target="_blank" rel="noreferrer">
+          <div class="k" data-i18n="c_wa">WhatsApp</div>
+          <div class="v">+967 774 586 524</div>
+        </a>
+        <a class="card reveal contact-card" href="https://github.com/Yahyaalbanaa" target="_blank" rel="noreferrer">
+          <div class="k">GitHub</div>
+          <div class="v">@Yahyaalbanaa</div>
+        </a>
+        <a class="card reveal contact-card" href="https://www.instagram.com/yahya.albnaa/" target="_blank" rel="noreferrer">
+          <div class="k">Instagram</div>
+          <div class="v">@yahya.albnaa</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <a class="footer-name" href="https://www.instagram.com/yahya.albnaa/" target="_blank" rel="noreferrer">
+        © <span id="year"></span> <span data-i18n="footer_name">Yahya Al‑Banna</span>
+      </a>
+      
+    </footer>
+  </main>
+
+  
+  <button id="backToTop" class="back-to-top" aria-label="" title="">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M12 5l-7 7m7-7l7 7M12 5v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
